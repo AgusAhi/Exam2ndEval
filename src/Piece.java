@@ -1,5 +1,6 @@
 public class Piece {
-    private static final String[] CHESS_SYMBOLS = {"♙", "♖", "♘", "♗", "♕", "♔", "♟", "♜", "♞", "♝", "♛", "♚"};
+    private static final String[] CHESS_SYMBOLS_WHITE = {"♟", "♜", "♞", "♝", "♛", "♚"};
+    private static final String[] CHESS_SYMBOLS_BLACK = {"♙", "♖", "♘", "♗", "♕", "♔"};
     private int color;
     private int type;
 
@@ -10,7 +11,11 @@ public class Piece {
 
     @Override
     public String toString () {
-        return CHESS_SYMBOLS[6 * color + type];
+        if (color == 0) {
+            return CHESS_SYMBOLS_WHITE[type];
+        } else {
+            return CHESS_SYMBOLS_BLACK[type];
+        }
     }
 
     public int getColor() {

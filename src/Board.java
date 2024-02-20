@@ -5,9 +5,8 @@ import java.util.*;
 public class Board {
     private Map<Position, Piece> map;
 
-
     public Board() throws IOException {
-        map = new HashMap<>();
+        map = new TreeMap<>();
         readMapFromFile();
     }
 
@@ -22,7 +21,7 @@ public class Board {
                 int row = Integer.parseInt(items[0]);
                 int col = Integer.parseInt(items[1]);
                 int type = Integer.parseInt(items[2]);
-                int color = Integer.parseInt(items[3]);
+                int color = Integer.parseInt(items[3]); // ERA PARA CONVERTIRLO EN STRING
                 Piece piece = new Piece(color, type);
                 Position position = new Position(row, col);
                 map.put(position, piece);
