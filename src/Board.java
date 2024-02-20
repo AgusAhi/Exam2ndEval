@@ -6,7 +6,7 @@ public class Board {
     private Map<Position, Piece> map;
 
     public Board() throws IOException {
-        map = new TreeMap<>();
+        map = new HashMap<>();
         readMapFromFile();
     }
 
